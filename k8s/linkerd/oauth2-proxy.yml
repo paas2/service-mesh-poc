@@ -1,0 +1,50 @@
+#---
+#apiVersion: apps/v1
+#kind: Deployment
+#metadata:
+#  labels:
+#    run: oauth2-proxy
+#  name: oauth2-proxy
+#  namespace: linkerd-poc 
+#spec:
+#  selector:
+#    matchLabels:
+#      run: oauth2-proxy
+#  template:
+#    metadata:
+#      labels:
+#        run: oauth2-proxy
+#    spec:
+#      containers:
+#      - name: oauth2-proxy
+#        image: quay.io/oauth2-proxy/oauth2-proxy
+#        imagePullPolicy: IfNotPresent
+#        args:
+#        - --provider=keycloak-oidc
+#        - --client-id=myclient
+#        - --client-secret=PCS93pfduh8270m3QRAOtMYhKYodQ8ab
+#        - --redirect-url=https://myapp.com/oauth2/callback
+#        - --oidc-issuer-url=http://keycloak.default:8080/realms/myrealm
+#        - --email-domain=*
+#        - --cookie-name=_oauth2_proxy
+#        - --cookie-secret=xwrLXUH7qLutize80SSlwm8EyG0Cm7FbivAznHeucMI=
+#        - --standard-logging=true
+#        - --auth-logging=true
+#        - --request-logging=true
+#        ports:
+#        - containerPort: 4180
+#          protocol: TCP
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  labels:
+#    run: oauth2-proxy
+#  name: oauth2-proxy
+#spec:
+#  ports:
+#  - port: 4180
+#    protocol: TCP
+#    targetPort: 4180
+#  selector:
+#    run: oauth2-proxy

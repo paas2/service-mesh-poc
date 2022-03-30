@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XService", "XService\XService.csproj", "{C5657B02-0914-46CC-8FEC-97F79994986E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YService", "YService\YService.csproj", "{86E77EBF-6F42-4615-907A-D093482DEE3C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZService", "ZService\ZService.csproj", "{3D1AA841-71D7-4C29-8DE6-378286347FE8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5657B02-0914-46CC-8FEC-97F79994986E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5657B02-0914-46CC-8FEC-97F79994986E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5657B02-0914-46CC-8FEC-97F79994986E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5657B02-0914-46CC-8FEC-97F79994986E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86E77EBF-6F42-4615-907A-D093482DEE3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86E77EBF-6F42-4615-907A-D093482DEE3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86E77EBF-6F42-4615-907A-D093482DEE3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86E77EBF-6F42-4615-907A-D093482DEE3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D1AA841-71D7-4C29-8DE6-378286347FE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D1AA841-71D7-4C29-8DE6-378286347FE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D1AA841-71D7-4C29-8DE6-378286347FE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D1AA841-71D7-4C29-8DE6-378286347FE8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

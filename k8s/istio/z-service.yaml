@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: z-service
+  namespace: istio-poc
+spec:
+  type: ClusterIP
+  # type: NodePort
+  selector:
+    component: z-api
+  ports:
+    - port: 3000
+      targetPort: 80

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: x-deployment
+  namespace: istio-poc
+  labels:
+    app: x-deployment
+    version: "1.0.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: x-api
+  template:
+    metadata:
+      annotations:
+        # sidecar.istio.io/inject: "true"      
+        # linkerd.io/inject: enabled
+      labels:
+        component: x-api
+    spec:
+      containers:
+        - name: x-api
+          image: x-service
+          # imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

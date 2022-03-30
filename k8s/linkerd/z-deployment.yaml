@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: z-deployment
+  namespace: linkerd-poc
+  labels:
+    app: z-deployment
+    version: "1.0.0"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: z-api
+  template:
+    metadata:
+      annotations:
+        # sidecar.istio.io/inject: "true"        
+        linkerd.io/inject: enabled
+      labels:
+        component: z-api
+    spec:
+      containers:
+        - name: z-api
+          image: z-service
+          # imagePullPolicy: Always
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80

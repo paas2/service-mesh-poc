@@ -1,0 +1,53 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: x-ingress
+  namespace: linkerd-poc
+  annotations:
+    kubernetes.io/ingress.class: haproxy
+#    haproxy.org/request-set-header: |
+#      l5d-dst-override web-svc.emojivoto.svc.cluster.local:80
+    # ingress.kubernetes.io/oauth: oauth2_proxy
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: x-service
+                port:
+                  number: 3001
+
+#---
+#
+#apiVersion: networking.k8s.io/v1
+#kind: Ingress
+#metadata:
+#  name: x-ingress-2
+#  namespace: linkerd-poc
+#  annotations:
+#    kubernetes.io/ingress.class: haproxy
+##    haproxy.org/request-set-header: |
+##      l5d-dst-override web-svc.emojivoto.svc.cluster.local:80
+#    ingress.kubernetes.io/oauth: oauth2_proxy
+#spec:
+#  rules:
+#    - host: linkerd.poc
+#      http:
+#        paths:
+#          - path: /oauth2
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: oauth2-proxy
+#                port:
+#                  number: 4180
+#          - path: /Test
+#            pathType: Prefix
+#            backend:
+#              service:
+#                name: x-service
+#                port:
+#                  number: 3001
